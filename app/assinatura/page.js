@@ -1,12 +1,10 @@
 "use client";
 import Link from "next/link";
 import {useEffect,useState} from "react";
-import {useSearchParams} from "next/navigation";
 import {createClient} from "../../lib/supabase/client";
 
 export default function Assinatura(){
  const supabase=createClient();
- const searchParams=useSearchParams();
  const [user,setUser]=useState(null),[active,setActive]=useState(false),[loading,setLoading]=useState(true),[busy,setBusy]=useState(false),[message,setMessage]=useState("");
 
  async function refreshStatus(u){
@@ -19,7 +17,7 @@ export default function Assinatura(){
    const {data:{user:u}}=await supabase.auth.getUser();
    setUser(u);
    await refreshStatus(u);
-   if(searchParams.get("checkout")==="success")setMessage("Pagamento recebido. A confirmação da assinatura pode levar alguns instantes.");
+   if(typeof window!=="undefined"&&new URLSearchParams(window.location.search).get("checkout")==="success")setMessage("Pagamento recebido. A confirmação da assinatura pode levar alguns instantes.");
    setLoading(false);
  })()},[]);
 
