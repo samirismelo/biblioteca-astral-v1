@@ -5,10 +5,10 @@ import {createClient} from "../../lib/supabase/client";
 
 export default function Admin(){
  const supabase=createClient();
- const [user,setUser]=useState(null),[cats,setCats]=useState([]),[books,setBooks]=useState([]),[msg,setMsg]=useState(""),[busy,setBusy]=useState(false);
+ const [user,setUser]=useState(null),[isAdmin,setIsAdmin]=useState(false),[cats,setCats]=useState([]),[books,setBooks]=useState([]),[msg,setMsg]=useState(""),[busy,setBusy]=useState(false);
  const [form,setForm]=useState({title:"",author:"",description:"",category_id:"",is_premium:true,published:false});
  const [cover,setCover]=useState(null),[file,setFile]=useState(null);
- useEffect(()=>{(async()=>{const {data:{user}}=await supabase.auth.getUser();setUser(user);const c=await supabase.from("categories").select("*").order("name");setCats(c.data||[]);loadBooks()})()},[]);
+ useEffect(()=>{(async()=>{const {data:{user}}=await supabase.auth.getUser();setUser(user);if(user){const p=await supabase.from("profiles").select("role").eq("id",user.id).single();setIsAdmin(p.data?.role==="admin");if(p.data?.role==="admin"){const cat=await supabase.from("categories").select("*").order("name");setCats(cat.data||[]);loadBooks()} } })()},[]);
  async function loadBooks(){const {data}=await supabase.from("books").select("*,categories(name)").order("created_at",{ascending:false});setBooks(data||[])}
  async function addBook(e){e.preventDefault();setMsg("");if(!user){setMsg("Entre com sua conta para cadastrar livros.");return}if(!file){setMsg("Selecione um PDF ou EPUB.");return}setBusy(true);
   try{
@@ -22,7 +22,7 @@ export default function Admin(){
  return <main className="simplePage"><header className="topbar"><Link href="/" className="brand">✦ Portal Cósmico</Link><nav><Link href="/">Biblioteca</Link><Link href="/minha-biblioteca">Minha Biblioteca</Link></nav></header>
  <section className="admin"><div className="sectionHead"><div><span className="sectionKicker">ADMINISTRAÇÃO</span><h1>Acervo Astral</h1></div></div>
  {!user&&<div className="emptyBox"><h2>Login necessário</h2><p>Entre com sua conta para acessar o cadastro do acervo.</p><Link className="goldButton" href="/login">Entrar</Link></div>}
- {user&&<div className="adminGrid"><section className="panel"><h2>Novo livro</h2><form onSubmit={addBook}>
+ {user&&!isAdmin&&<div className="emptyBox"><h2>Acesso restrito</h2><p>Sua conta ainda não possui permissão de administrador.</p></div>}{user&&isAdmin&&<div className="adminGrid"><section className="panel"><h2>Novo livro</h2><form onSubmit={addBook}>
  <label>Título<input value={form.title} required onChange={e=>setForm({...form,title:e.target.value})}/></label>
  <label>Autor<input value={form.author} onChange={e=>setForm({...form,author:e.target.value})}/></label>
  <label>Categoria<select value={form.category_id} onChange={e=>setForm({...form,category_id:e.target.value})}><option value="">Selecione</option>{cats.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
