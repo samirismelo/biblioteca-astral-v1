@@ -15,5 +15,8 @@
     "@supabase/supabase-js": "latest",
     "@supabase/ssr": "latest",
     "epubjs": "^0.3.93"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
