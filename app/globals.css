@@ -3,3 +3,283 @@
 .readerPage{min-height:100vh;background:#090611;color:#eee6d9}.readerTop{height:72px;padding:0 28px;border-bottom:1px solid #30203d;background:#10091a;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.readerTop>div{text-align:center}.readerTop b{display:block;font:italic 20px "Cormorant Garamond",serif;color:#c8a15b}.readerTop small{display:block;font-size:10px;color:#9e91a1;margin-top:2px}.readerTop .read{justify-self:end}.readerTop a{color:#c8a15b;text-decoration:none;font-size:11px}.readerWrap{max-width:1250px;margin:auto;padding:32px 28px}.readerMeta{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:20px}.readerMeta h1{font:italic 38px "Cormorant Garamond",serif;margin:8px 0 0}.readerMeta p{color:#9f92a3;font-size:12px}.readerMeta label{font-size:10px;color:#a99cab;display:flex;align-items:center;gap:10px}.readerMeta input{width:180px;accent-color:#b99250}.readerMeta strong{color:#c8a15b}.pdfReader{display:block;width:100%;height:calc(100vh - 185px);min-height:650px;border:1px solid #352447;background:#16101d}.readerState{max-width:720px;margin:12vh auto;padding:45px 30px;text-align:center;border:1px solid #352447;background:#110a1c}.readerState h1,.readerState h2{font:italic 34px "Cormorant Garamond",serif}.readerState p{color:#aaa0ae;font-size:13px;line-height:1.7}.readerActions{display:flex;justify-content:center;gap:12px;margin-top:20px}@media(max-width:720px){.readerTop{padding:0 15px;grid-template-columns:1fr auto}.readerTop>div{display:none}.readerWrap{padding:22px 14px}.readerMeta{display:block}.readerMeta label{margin-top:18px}.readerMeta input{width:140px}.pdfReader{height:72vh;min-height:520px}}
 
 .epubReader{background:#f5f0e6;color:#241c18;min-height:calc(100vh - 270px);border:1px solid #3a2949;overflow:hidden}.epubNav{display:flex;justify-content:center;gap:12px;padding:15px 0}.epubNav button{cursor:pointer}
+
+
+/* ---------- Shared inner pages ---------- */
+.simplePage{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 78% 14%,rgba(101,58,126,.22),transparent 34%),
+    radial-gradient(circle at 18% 88%,rgba(104,72,122,.12),transparent 30%),
+    #0a0612;
+  color:#eee6d9;
+}
+.topbar{
+  min-height:72px;
+  padding:0 36px;
+  border-bottom:1px solid #30203d;
+  background:rgba(16,9,26,.92);
+  backdrop-filter:blur(14px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+.topbar .brand{
+  color:#eee6d9;
+  text-decoration:none;
+  font:italic 27px/1 "Cormorant Garamond",serif;
+  letter-spacing:.01em;
+}
+.topbar .brand::first-letter{color:#c7a15c}
+.topbar nav{display:flex;align-items:center;gap:20px}
+.topbar nav a{
+  color:#a99cad;
+  text-decoration:none;
+  font-size:11px;
+  transition:.2s ease;
+}
+.topbar nav a:hover{color:#d5b36e}
+.simpleInner{
+  width:min(1040px,calc(100% - 36px));
+  margin:0 auto;
+  padding:72px 0 90px;
+}
+.simpleInner h1{
+  margin:14px 0 18px;
+  font:500 48px/1.05 "Cormorant Garamond",serif;
+}
+.simpleInner>p{
+  max-width:720px;
+  color:#a99cab;
+  font-size:14px;
+  line-height:1.8;
+}
+.emptyBox{
+  border:1px solid #3b2949;
+  background:linear-gradient(145deg,rgba(27,17,39,.95),rgba(13,8,22,.95));
+  padding:28px;
+  margin-top:24px;
+}
+.emptyBox h2{
+  margin:0 0 8px;
+  font:500 28px "Cormorant Garamond",serif;
+}
+.emptyBox p{color:#9f92a3}
+
+/* ---------- Subscription ---------- */
+.pricing{
+  width:min(1080px,calc(100% - 36px));
+  margin:0 auto;
+  padding:76px 0 100px;
+}
+.pricing>h1{
+  margin:16px 0 14px;
+  max-width:760px;
+  font:500 54px/1 "Cormorant Garamond",serif;
+  letter-spacing:-.02em;
+}
+.pricing>p{
+  max-width:650px;
+  margin:0 0 36px;
+  color:#a99cab;
+  font-size:14px;
+  line-height:1.7;
+}
+.plan{
+  position:relative;
+  width:min(100%,620px);
+  padding:34px 34px 32px;
+  border:1px solid #4c365b;
+  background:
+    linear-gradient(145deg,rgba(26,15,38,.98),rgba(12,8,20,.98));
+  box-shadow:0 26px 70px rgba(0,0,0,.32);
+  overflow:hidden;
+}
+.plan:before{
+  content:"✦";
+  position:absolute;
+  right:24px;
+  top:18px;
+  color:#c7a15c;
+  font-size:25px;
+  opacity:.6;
+}
+.plan:after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  right:-100px;
+  top:-120px;
+  background:radial-gradient(circle,rgba(168,107,187,.18),transparent 67%);
+  pointer-events:none;
+}
+.plan h2{
+  margin:0 0 12px;
+  font:500 32px/1.1 "Cormorant Garamond",serif;
+}
+.price{
+  color:#d6b46d;
+  font:600 25px/1.2 "Cormorant Garamond",serif;
+  margin:0 0 22px;
+}
+.plan ul{
+  list-style:none;
+  margin:0;
+  padding:18px 0 6px;
+  border-top:1px solid #352541;
+}
+.plan li{
+  position:relative;
+  padding:8px 0 8px 26px;
+  color:#d8cfdc;
+  font-size:13px;
+}
+.plan li:before{
+  content:"✦";
+  position:absolute;
+  left:0;
+  color:#b99250;
+}
+.plan .goldButton{
+  margin-top:24px;
+  min-width:220px;
+  text-align:center;
+  padding:13px 20px;
+  background:linear-gradient(180deg,#c3a161,#9a7438);
+  color:#120c16;
+  border-color:#d4b46f;
+  border-radius:2px;
+  font-weight:700;
+  letter-spacing:.02em;
+  transition:.2s ease;
+}
+.plan .goldButton:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.06);
+  box-shadow:0 10px 28px rgba(177,138,78,.18);
+}
+.plan .goldButton:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+  transform:none;
+}
+.plan .muted{
+  color:#8f8293;
+  font-size:11px;
+  margin-top:12px;
+}
+.authMessage{
+  margin-top:18px;
+  padding:12px 14px;
+  border:1px solid #4a3654;
+  background:#15101d;
+  color:#d4c5d6;
+  font-size:12px;
+  line-height:1.5;
+}
+
+/* ---------- Auth ---------- */
+.authPage{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:28px;
+  background:
+    radial-gradient(circle at 50% 10%,rgba(113,62,138,.25),transparent 34%),
+    #0a0612;
+}
+.authCard{
+  width:min(100%,460px);
+  padding:38px;
+  border:1px solid #3d2b4b;
+  background:linear-gradient(145deg,#171020,#0d0815);
+  box-shadow:0 30px 90px #0007;
+}
+.authBrand{
+  display:block;
+  margin-bottom:28px;
+  color:#eee6d9;
+  text-decoration:none;
+  font:italic 28px "Cormorant Garamond",serif;
+}
+.authCard h1{
+  font:500 40px/1 "Cormorant Garamond",serif;
+  margin:14px 0 10px;
+}
+.authCard>p{color:#9f92a3;font-size:13px;line-height:1.6}
+.authCard form{display:grid;gap:12px;margin-top:24px}
+.authCard input,
+.authCard select,
+.authCard textarea,
+.admin input,
+.admin select,
+.admin textarea{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid #3f2d4b;
+  background:#0d0913;
+  color:#eee6d9;
+  outline:none;
+}
+.authCard input:focus,
+.admin input:focus,
+.admin select:focus,
+.admin textarea:focus{border-color:#9c7742}
+.switchAuth{
+  margin-top:18px;
+  border:0;
+  background:transparent;
+  color:#a991b0;
+  cursor:pointer;
+  padding:0;
+}
+
+/* ---------- Admin / library helpers ---------- */
+.admin{
+  width:min(1180px,calc(100% - 36px));
+  margin:0 auto;
+  padding:64px 0 90px;
+}
+.admin h1{font:500 45px "Cormorant Garamond",serif}
+.adminGrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px}
+.panel{
+  border:1px solid #392847;
+  background:linear-gradient(145deg,#171020,#0e0918);
+  padding:26px;
+}
+.panel h2{font:500 28px "Cormorant Garamond",serif;margin-top:0}
+.panel form{display:grid;gap:13px}
+.panel label{font-size:11px;color:#aa9cad;display:grid;gap:7px}
+.check{display:flex!important;align-items:center;gap:8px!important}
+.check input{width:auto!important}
+.adminList{display:grid;gap:10px}
+.adminRow{border-bottom:1px solid #32243d;padding:12px 0}
+.adminRow strong{display:block;font-size:13px}
+.adminRow small{display:block;color:#8e8290;margin-top:4px;font-size:10px}
+.myGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}
+.myBook{text-decoration:none;color:#eee6d9}
+.myBook .bookCover{height:260px}
+.myBook b{display:block;margin-top:8px;font-size:12px}
+.myBook small{color:#9a8c9d;font-size:10px}
+
+/* ---------- Responsive inner pages ---------- */
+@media(max-width:720px){
+  .topbar{padding:0 16px;min-height:64px}
+  .topbar .brand{font-size:22px}
+  .topbar nav{gap:10px}
+  .topbar nav a{font-size:9px}
+  .pricing{padding:48px 0 70px}
+  .pricing>h1{font-size:40px}
+  .plan{padding:26px 22px}
+  .plan h2{font-size:28px}
+  .simpleInner{padding:48px 0 70px}
+  .simpleInner h1{font-size:40px}
+  .adminGrid{grid-template-columns:1fr}
+  .myGrid{grid-template-columns:repeat(2,1fr)}
+}
