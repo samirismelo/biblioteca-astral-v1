@@ -39,6 +39,7 @@ export async function POST(request) {
         external_reference: user.id,
         payer_email: user.email,
         back_url: `${origin}/assinatura?checkout=success`,
+        notification_url: `${origin}/api/mercadopago/webhook`,
       }),
       cache: "no-store",
     });
