@@ -283,3 +283,45 @@
   .adminGrid{grid-template-columns:1fr}
   .myGrid{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ---------- Lifetime offer ---------- */
+.lifetimePricing{max-width:1180px}
+.offerStats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 44px}
+.offerStats>div{border:1px solid #3a2949;background:linear-gradient(145deg,#15101d,#0d0914);padding:24px;text-align:center}
+.offerStats strong{display:block;font:600 34px "Cormorant Garamond",serif;color:#d6b46d}
+.offerStats span{display:block;margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#958799}
+.topicsBlock{margin:0 0 44px}
+.topicChips{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.topicChips span{border:1px solid #3d2c48;background:#120b1b;color:#cbbfd0;padding:8px 11px;font-size:10px}
+.lifetimePlan{width:min(100%,760px);padding:38px}
+.planBadge{display:inline-block;margin-bottom:14px;padding:6px 9px;border:1px solid #725632;color:#d2ad65;font-size:9px;letter-spacing:.16em;font-weight:700}
+.oldPrice{color:#7f7184;text-decoration:line-through;font-size:12px;margin-bottom:5px}
+.lifetimePlan .price{font-size:36px;margin-bottom:22px}
+.lifetimePlan .price small{display:block;font:500 11px Inter,sans-serif;color:#9f92a3;margin-top:6px;text-transform:uppercase;letter-spacing:.08em}
+.lifetimePlan ul{columns:2;column-gap:30px}
+.lifetimePlan li{break-inside:avoid}
+.lifetimeButton{width:100%;max-width:440px;padding:15px 22px!important;font-size:12px!important}
+.successMessage{border-color:#5f704d;color:#d9e5cb;background:#11170f}
+.guaranteeBox{width:min(100%,760px);margin:22px 0 62px;border:1px solid #55422b;background:linear-gradient(135deg,#1b160f,#0e0a12);padding:22px 24px}
+.guaranteeBox strong{display:block;color:#d6b46d;font:600 22px "Cormorant Garamond",serif}
+.guaranteeBox p{margin:7px 0 0;color:#aa9cad;font-size:12px;line-height:1.65}
+.faqSection{margin-top:54px}
+.faqSection h2{font:500 40px "Cormorant Garamond",serif;margin:18px 0 26px}
+.faqGrid{display:grid;gap:10px;max-width:900px}
+.faqGrid details{border:1px solid #372744;background:#100a19;padding:0 18px}
+.faqGrid summary{cursor:pointer;list-style:none;padding:17px 0;color:#eee6d9;font-size:13px;font-weight:600}
+.faqGrid summary::-webkit-details-marker{display:none}
+.faqGrid summary:after{content:"+";float:right;color:#c8a15b;font-size:18px}
+.faqGrid details[open] summary:after{content:"–"}
+.faqGrid details p{margin:0;padding:0 0 17px;color:#9f92a3;font-size:12px;line-height:1.7}
+.finalCta{margin-top:64px;border:1px solid #463352;background:radial-gradient(circle at 80% 10%,rgba(126,77,143,.18),transparent 36%),#120c1c;padding:42px;text-align:center}
+.finalCta>span{font-size:9px;letter-spacing:.2em;color:#c09a56;font-weight:700}
+.finalCta h2{font:500 42px "Cormorant Garamond",serif;margin:12px 0 8px}
+.finalCta p{color:#9f92a3;font-size:13px}
+@media(max-width:720px){
+  .offerStats{grid-template-columns:1fr}
+  .lifetimePlan{padding:26px 22px}
+  .lifetimePlan ul{columns:1}
+  .faqSection h2,.finalCta h2{font-size:32px}
+  .finalCta{padding:30px 20px}
+}
