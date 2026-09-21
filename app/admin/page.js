@@ -19,7 +19,7 @@ export default function Admin(){
    if(ins.error)throw ins.error;setMsg("Livro cadastrado com sucesso.");setForm({title:"",author:"",description:"",category_id:"",is_premium:true,published:false});setCover(null);setFile(null);e.target.reset();loadBooks();
   }catch(err){setMsg(err.message||"Não foi possível cadastrar o livro.")}finally{setBusy(false)}
  }
- return <main className="simplePage"><header className="topbar"><Link href="/" className="brand">✦ Biblioteca Astral</Link><nav><Link href="/">Biblioteca</Link><Link href="/minha-biblioteca">Minha Biblioteca</Link></nav></header>
+ return <main className="simplePage"><header className="topbar"><Link href="/" className="brand">✦ Portal Cósmico</Link><nav><Link href="/">Biblioteca</Link><Link href="/minha-biblioteca">Minha Biblioteca</Link></nav></header>
  <section className="admin"><div className="sectionHead"><div><span className="sectionKicker">ADMINISTRAÇÃO</span><h1>Acervo Astral</h1></div></div>
  {!user&&<div className="emptyBox"><h2>Login necessário</h2><p>Entre com sua conta para acessar o cadastro do acervo.</p><Link className="goldButton" href="/login">Entrar</Link></div>}
  {user&&<div className="adminGrid"><section className="panel"><h2>Novo livro</h2><form onSubmit={addBook}>
