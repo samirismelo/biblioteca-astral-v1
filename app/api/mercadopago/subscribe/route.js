@@ -17,37 +17,50 @@ export async function POST(request) {
   try {
     const user = await getUser(request);
     if (!user?.id || !user?.email) {
-      return Response.json({ error: "Faça login antes de assinar." }, { status: 401 });
+      return Response.json({ error: "Faça login antes de comprar o acesso." }, { status: 401 });
     }
 
     const accessToken = process.env.MERCADOPAGO_ACCESS_TOKEN;
-    const planId = process.env.MERCADOPAGO_PLAN_ID;
-    if (!accessToken || !planId) {
+    if (!accessToken) {
       return Response.json({ error: "Mercado Pago ainda não foi configurado no servidor." }, { status: 503 });
     }
 
+    const price = Number(process.env.MERCADOPAGO_LIFETIME_PRICE || "27.90");
     const origin = process.env.NEXT_PUBLIC_APP_URL || new URL(request.url).origin;
-    const response = await fetch("https://api.mercadopago.com/preapproval", {
+
+    const response = await fetch("https://api.mercadopago.com/checkout/preferences", {
       method: "POST",
       headers: {
         authorization: `Bearer ${accessToken}`,
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        preapproval_plan_id: planId,
-        reason: "Portal Cósmico Premium",
+        items: [{
+          id: "biblioteca-astral-lifetime",
+          title: "Biblioteca Astral — Acesso Vitalício",
+          description: "Pagamento único para acesso vitalício à Biblioteca Astral.",
+          quantity: 1,
+          currency_id: "BRL",
+          unit_price: price
+        }],
+        payer: { email: user.email },
         external_reference: user.id,
-        payer_email: user.email,
-        back_url: `${origin}/assinatura?checkout=success`,
-        notification_url: `${origin}/api/mercadopago/webhook`,
+        metadata: { user_id: user.id, access_type: "lifetime" },
+        back_urls: {
+          success: `${origin}/assinatura?checkout=success`,
+          pending: `${origin}/assinatura?checkout=pending`,
+          failure: `${origin}/assinatura?checkout=failure`
+        },
+        auto_return: "approved",
+        notification_url: `${origin}/api/mercadopago/webhook`
       }),
       cache: "no-store",
     });
 
     const data = await response.json();
     if (!response.ok) {
-      console.error("Mercado Pago subscription error", data);
-      return Response.json({ error: data?.message || "Não foi possível iniciar a assinatura." }, { status: 502 });
+      console.error("Mercado Pago preference error", data);
+      return Response.json({ error: data?.message || "Não foi possível iniciar o pagamento." }, { status: 502 });
     }
 
     const checkoutUrl = data.init_point || data.sandbox_init_point;
@@ -55,9 +68,9 @@ export async function POST(request) {
       return Response.json({ error: "O Mercado Pago não devolveu a URL de checkout." }, { status: 502 });
     }
 
-    return Response.json({ checkoutUrl, subscriptionId: data.id, status: data.status });
+    return Response.json({ checkoutUrl, preferenceId: data.id });
   } catch (error) {
     console.error(error);
-    return Response.json({ error: "Não foi possível iniciar a assinatura." }, { status: 500 });
+    return Response.json({ error: "Não foi possível iniciar o pagamento." }, { status: 500 });
   }
 }
