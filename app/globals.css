@@ -325,3 +325,180 @@
   .faqSection h2,.finalCta h2{font-size:32px}
   .finalCta{padding:30px 20px}
 }
+
+
+/* =========================
+   Sales landing / assinatura
+   ========================= */
+.salesPage{min-height:100vh;background:#090611;color:#f3ede4;overflow:hidden}
+.salesNav{height:74px;padding:0 5vw;display:flex;align-items:center;gap:32px;border-bottom:1px solid #2f2238;background:rgba(9,6,17,.92);backdrop-filter:blur(18px);position:sticky;top:0;z-index:50}
+.salesLogo{color:#f3ede4;text-decoration:none;font:italic 28px "Cormorant Garamond",serif;white-space:nowrap}
+.salesLogo span{color:#c9a463}
+.salesNav nav{display:flex;gap:26px;margin-left:auto}
+.salesNav nav a{color:#9e93a4;text-decoration:none;font-size:11px;letter-spacing:.04em}
+.salesNav nav a:hover{color:#d3b374}
+.navCta{border:1px solid #6b5030;color:#d3b374;text-decoration:none;padding:9px 14px;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+
+.salesHero{max-width:1240px;margin:0 auto;padding:86px 32px 70px;display:grid;grid-template-columns:1.06fr .94fr;gap:70px;align-items:center;position:relative}
+.heroCopy{position:relative;z-index:2}
+.heroEyebrow,.smallCaps,.sectionHeading>span,.offerIntro>span,.closingSection>span{font-size:9px;letter-spacing:.22em;font-weight:700;color:#c19a56;text-transform:uppercase}
+.heroCopy h1{font:500 64px/.95 "Cormorant Garamond",serif;letter-spacing:-.035em;margin:18px 0 22px;max-width:720px}
+.heroCopy h1 em,.sectionHeading h2 em,.whySection h2 em,.closingSection h2 em{color:#d3b36e;font-weight:500}
+.heroCopy p{max-width:610px;color:#a89bac;font-size:14px;line-height:1.85;margin:0}
+.heroActions{display:flex;gap:13px;margin:32px 0 24px}
+.primaryCta,.secondaryCta{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:14px 21px;font-size:11px;letter-spacing:.045em;cursor:pointer}
+.primaryCta{border:1px solid #d0ad69;background:linear-gradient(180deg,#d2b06c,#a67c3f);color:#110b15;font-weight:800}
+.secondaryCta{border:1px solid #493553;color:#b8a9bd;background:#100a18}
+.heroTrust{display:flex;gap:22px;flex-wrap:wrap;color:#887c8d;font-size:10px}
+.heroTrust span:before{content:"✦";color:#b58e4f;margin-right:7px}
+
+.heroVisual{min-height:520px;position:relative;display:grid;place-items:center}
+.cosmicOrb{position:absolute;width:440px;height:440px;border-radius:50%;display:grid;place-items:center;color:#d7b56e;font-size:42px;background:radial-gradient(circle at 50% 40%,rgba(133,86,154,.32),rgba(54,30,72,.18) 38%,transparent 69%);filter:drop-shadow(0 0 50px rgba(123,75,147,.2))}
+.deviceMock{position:relative;z-index:4;width:300px;height:450px;border:1px solid #624b6c;border-radius:28px;background:linear-gradient(180deg,#171020,#0d0914);padding:11px;box-shadow:0 35px 85px #0009,0 0 50px rgba(112,74,134,.18);transform:rotate(3deg)}
+.deviceMock:before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:72px;height:6px;border-radius:10px;background:#09060c}
+.deviceTop{height:43px;display:flex;align-items:end;justify-content:center;padding-bottom:9px;color:#c9a463;font-size:9px;letter-spacing:.15em}
+.deviceScreen{height:380px;border:1px solid #382944;background:radial-gradient(circle at 70% 15%,#2f1b3d,#100a18 54%);padding:15px;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.miniBook{height:145px;border:1px solid #543c5e;padding:12px;background:linear-gradient(150deg,#30233a,#100b17);display:flex;flex-direction:column;justify-content:flex-end}
+.miniBook b{font:italic 16px/1.05 "Cormorant Garamond",serif;color:#e6d6bd}
+.miniBook small{font-size:7px;line-height:1.35;color:#9b8ba1;margin-top:5px}
+.miniBook0{background:linear-gradient(155deg,#5d3d25,#17101a 62%)}
+.miniBook1{background:linear-gradient(155deg,#47305d,#17101a 62%)}
+.miniBook2{background:linear-gradient(155deg,#29453d,#17101a 62%)}
+.miniBook3{background:linear-gradient(155deg,#5b2935,#17101a 62%)}
+.floatingBook{position:absolute;z-index:5;width:118px;height:170px;border:1px solid #5a465f;display:grid;place-items:center;text-align:center;padding:12px;font:italic 17px "Cormorant Garamond",serif;box-shadow:0 18px 35px #0008}
+.bookA{left:8px;bottom:60px;transform:rotate(-12deg);background:linear-gradient(160deg,#563727,#171018)}
+.bookB{right:12px;top:40px;transform:rotate(10deg);background:linear-gradient(160deg,#342245,#171018)}
+.bookC{right:5px;bottom:28px;transform:rotate(7deg);background:linear-gradient(160deg,#274039,#171018)}
+
+.bookRail{width:110%;margin-left:-5%;padding:28px 3%;display:grid;grid-template-columns:repeat(10,1fr);gap:10px;transform:rotate(-1.2deg);border-top:1px solid #2b1f35;border-bottom:1px solid #2b1f35;background:#0d0913}
+.railBook{height:170px;border:1px solid #44334d;display:grid;place-items:end center;padding:14px 8px;box-shadow:0 10px 28px #0006}
+.railBook span{font:italic 14px "Cormorant Garamond",serif;text-align:center}
+.rail0{background:linear-gradient(165deg,#6a452d,#1a1119 65%)}
+.rail1{background:linear-gradient(165deg,#49325c,#17101c 65%)}
+.rail2{background:linear-gradient(165deg,#315044,#17101c 65%)}
+.rail3{background:linear-gradient(165deg,#672e3d,#17101c 65%)}
+.rail4{background:linear-gradient(165deg,#6a6135,#17101c 65%)}
+
+.salesSection,.insideSection,.whySection,.offerSection,.faqSales{max-width:1160px;margin:0 auto;padding:95px 32px}
+.sectionHeading{max-width:760px}
+.centerHeading{text-align:center;margin:0 auto}
+.sectionHeading h2,.whySection h2,.offerIntro h2{font:500 48px/1.02 "Cormorant Garamond",serif;margin:14px 0 16px}
+.sectionHeading p,.offerIntro p{color:#9c90a1;font-size:13px;line-height:1.75;max-width:650px}
+.themeCloud{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.themeCloud span{padding:10px 14px;border:1px solid #3d2c48;background:#100a18;color:#c9bdcb;font-size:10px}
+
+.insideSection{max-width:none;background:linear-gradient(180deg,#0e0916,#0b0711);border-top:1px solid #271c30;border-bottom:1px solid #271c30}
+.insideSection>.sectionHeading{max-width:800px}
+.previewGrid{max-width:1160px;margin:38px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.previewCard{border:1px solid #372941;background:#110b19;padding:14px}
+.previewArt{height:280px;border:1px solid #4b3653;position:relative;overflow:hidden;padding:26px;display:flex;align-items:flex-end;background:linear-gradient(145deg,#eee5d4,#b9ad9d)}
+.previewArt:before{content:"";position:absolute;inset:20px;background:repeating-linear-gradient(180deg,rgba(34,25,22,.45) 0 1px,transparent 1px 15px);opacity:.32}
+.previewArt strong{position:relative;z-index:2;color:#251b18;font:600 26px "Cormorant Garamond",serif}
+.previewArt1{background:linear-gradient(145deg,#dbc8a8,#9f8b72)}
+.previewArt2{background:linear-gradient(145deg,#d8cab7,#8f9b8d)}
+.previewArt3{background:linear-gradient(145deg,#c9c0ae,#8c8275)}
+.previewArt4{background:linear-gradient(145deg,#d9c2b0,#9a756b)}
+.previewArt5{background:linear-gradient(145deg,#ccc6bb,#8e8890)}
+.previewCard h3{font:500 24px "Cormorant Garamond",serif;margin:14px 0 5px}
+.previewCard p{color:#8f8293;font-size:11px;line-height:1.55;margin:0}
+
+.whySection{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;align-items:start}
+.whySection h2{margin-top:16px}
+.benefitGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.benefitGrid article{border:1px solid #372841;background:#100a18;padding:22px}
+.benefitGrid article>b{color:#a9864c;font-size:9px;letter-spacing:.15em}
+.benefitGrid h3{font:500 23px "Cormorant Garamond",serif;margin:14px 0 7px}
+.benefitGrid p{color:#918496;font-size:11px;line-height:1.65;margin:0}
+
+.offerSection{padding-top:110px;padding-bottom:110px}
+.offerIntro{text-align:center;max-width:750px;margin:0 auto 35px}
+.offerIntro p{margin:0 auto}
+.offerCard{max-width:800px;margin:0 auto;border:1px solid #6a4e70;background:radial-gradient(circle at 90% 0,rgba(137,80,154,.19),transparent 35%),linear-gradient(150deg,#181020,#0d0914);box-shadow:0 35px 90px #0008}
+.offerTop{padding:30px 32px 24px;display:flex;justify-content:space-between;gap:25px;border-bottom:1px solid #3c2c45}
+.premiumTag{font-size:8px;letter-spacing:.18em;color:#c9a45f;border:1px solid #6e522f;padding:5px 8px}
+.offerTop h3{font:500 36px "Cormorant Garamond",serif;margin:13px 0 0}
+.offerPrice{text-align:right}
+.offerPrice s{display:block;color:#7d7181;font-size:11px}
+.offerPrice strong{display:block;font:600 42px "Cormorant Garamond",serif;color:#d4b16a}
+.offerPrice span{display:block;color:#918394;font-size:9px;text-transform:uppercase;letter-spacing:.08em}
+.offerBody{padding:28px 32px 32px}
+.offerBody ul{display:grid;grid-template-columns:1fr 1fr;gap:13px 24px;list-style:none;padding:0;margin:0 0 28px}
+.offerBody li{position:relative;padding-left:21px;color:#d8cddc;font-size:11px;line-height:1.5}
+.offerBody li:before{content:"✦";position:absolute;left:0;color:#b9914e}
+.bigCheckout{display:block;width:100%;border:1px solid #d3b16b;background:linear-gradient(180deg,#d5b36f,#a47b3e);color:#120b15;padding:16px 20px;font-size:12px;font-weight:800;letter-spacing:.04em;cursor:pointer;text-align:center}
+.bigCheckout:disabled{opacity:.6;cursor:not-allowed}
+.linkButton{text-decoration:none}
+.secureLine{text-align:center;color:#776d7d;font-size:9px;margin-top:12px}
+.checkoutState,.salesMessage{padding:14px;border:1px solid #4a3853;background:#120d18;color:#cdbfd0;font-size:11px;text-align:center}
+.activeAccess{border-color:#526347;color:#d3e1c7}
+.salesMessage{margin-top:12px}
+.guaranteeStrip{max-width:800px;margin:18px auto 0;border:1px solid #493921;background:#16120e;display:flex;gap:20px;align-items:center;padding:20px 24px}
+.guaranteeSeal{width:72px;height:72px;flex:0 0 72px;border:1px solid #a98244;border-radius:50%;display:grid;place-items:center;text-align:center;color:#d2ac65;font:600 24px/1 "Cormorant Garamond",serif}
+.guaranteeSeal span{font:700 8px Inter,sans-serif;letter-spacing:.14em}
+.guaranteeStrip strong{font:600 22px "Cormorant Garamond",serif;color:#e2d5c1}
+.guaranteeStrip p{margin:4px 0 0;color:#9c8e9e;font-size:11px;line-height:1.6}
+
+.faqSales{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}
+.faqList{display:grid;gap:9px}
+.faqList details{border-bottom:1px solid #33253c;padding:0}
+.faqList summary{cursor:pointer;list-style:none;padding:18px 0;color:#e5dce6;font-size:12px;font-weight:600}
+.faqList summary::-webkit-details-marker{display:none}
+.faqList summary:after{content:"+";float:right;color:#c6a15d;font-size:18px}
+.faqList details[open] summary:after{content:"–"}
+.faqList p{margin:0;padding:0 0 18px;color:#948798;font-size:11px;line-height:1.75}
+
+.closingSection{padding:105px 28px;text-align:center;background:radial-gradient(circle at 50% 10%,rgba(110,66,131,.24),transparent 45%),#0d0815;border-top:1px solid #2c2034}
+.closingSection h2{font:500 60px/.96 "Cormorant Garamond",serif;margin:15px 0}
+.closingSection p{color:#9a8d9d;font-size:13px}
+.closingBtn{margin-top:20px;border:1px solid #d0ad69}
+button.closingBtn{font-family:Inter,sans-serif}
+.salesFooter{padding:28px 5vw 36px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #261c2e;background:#090611}
+.salesFooter p{margin:0;color:#6f6674;font-size:9px}
+
+@media(max-width:980px){
+  .salesHero{grid-template-columns:1fr;gap:35px;text-align:center}
+  .heroCopy h1{margin-left:auto;margin-right:auto;font-size:56px}
+  .heroCopy p{margin-left:auto;margin-right:auto}
+  .heroActions,.heroTrust{justify-content:center}
+  .heroVisual{min-height:480px}
+  .bookRail{grid-template-columns:repeat(5,1fr)}
+  .railBook:nth-child(n+6){display:none}
+  .whySection,.faqSales{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .salesNav{padding:0 16px;height:64px}
+  .salesLogo{font-size:22px}
+  .salesNav nav{display:none}
+  .navCta{margin-left:auto}
+  .salesHero{padding:58px 18px 50px}
+  .heroCopy h1{font-size:43px}
+  .heroCopy p{font-size:13px}
+  .heroActions{flex-direction:column}
+  .heroActions a{width:100%}
+  .heroVisual{min-height:420px}
+  .deviceMock{width:250px;height:385px}
+  .deviceScreen{height:316px}
+  .miniBook{height:118px}
+  .cosmicOrb{width:330px;height:330px}
+  .floatingBook{width:92px;height:132px;font-size:13px}
+  .bookA{left:-10px}.bookB{right:-8px}.bookC{right:-15px}
+  .bookRail{grid-template-columns:repeat(3,1fr);gap:7px}
+  .railBook{height:140px}
+  .railBook:nth-child(n+4){display:none}
+  .salesSection,.insideSection,.whySection,.offerSection,.faqSales{padding:68px 18px}
+  .sectionHeading h2,.whySection h2,.offerIntro h2{font-size:38px}
+  .previewGrid{grid-template-columns:1fr 1fr;gap:10px}
+  .previewArt{height:210px;padding:16px}
+  .previewArt strong{font-size:21px}
+  .benefitGrid{grid-template-columns:1fr}
+  .offerTop{display:block;padding:25px 22px}
+  .offerPrice{text-align:left;margin-top:20px}
+  .offerBody{padding:24px 22px}
+  .offerBody ul{grid-template-columns:1fr}
+  .guaranteeStrip{align-items:flex-start}
+  .guaranteeSeal{width:62px;height:62px;flex-basis:62px}
+  .closingSection{padding:78px 18px}
+  .closingSection h2{font-size:46px}
+  .salesFooter{display:block;text-align:center}
+  .salesFooter p{margin-top:8px}
+}
